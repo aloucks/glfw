@@ -51,6 +51,8 @@
 #cmakedefine _GLFW_WGL
 // Define this to 1 if building GLFW for NSGL
 #cmakedefine _GLFW_NSGL
+// Define this to 1 if building GLFW for Direct3D
+#cmakedefine _GLFW_D3D
 
 // Define this to 1 if building as a shared library / dynamic library / DLL
 #cmakedefine _GLFW_BUILD_DLL
@@ -84,4 +86,5 @@
 #cmakedefine _GLFW_USE_GLESV1
 // Define this to 1 if using OpenGL ES 2.0 as the client library
 #cmakedefine _GLFW_USE_GLESV2
-
+// Define this to 1 if using Direct3D 11 as the client library
+#cmakedefine _GLFW_USE_D3D11

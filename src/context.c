@@ -366,6 +366,9 @@ const _GLFWfbconfig* _glfwChooseFBConfig(const _GLFWfbconfig* desired,
 
 GLboolean _glfwRefreshContextAttribs(const _GLFWctxconfig* ctxconfig)
 {
+#if defined(_GLFW_D3D)
+    return GL_TRUE;
+#else
     _GLFWwindow* window = _glfwPlatformGetCurrentContext();
 
     if (!parseGLVersion(&window->context.api,
@@ -375,6 +378,7 @@ GLboolean _glfwRefreshContextAttribs(const _GLFWctxconfig* ctxconfig)
     {
         return GL_FALSE;
     }
+#endif
 
 #if defined(_GLFW_USE_OPENGL)
     if (window->context.major > 2)

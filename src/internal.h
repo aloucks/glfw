@@ -41,6 +41,7 @@
  #define GLFW_INCLUDE_ES1
 #elif defined(_GLFW_USE_GLESV2)
  #define GLFW_INCLUDE_ES2
+#elif defined(_GLFW_USE_D3D11)
 #else
  #error "No supported client library selected"
 #endif
@@ -56,6 +57,11 @@
  // GLFW comes with its own copy of glext.h since it uses fairly new extensions
  // and not all development environments come with an up-to-date version
  #include "../deps/GL/glext.h"
+#endif
+
+#if defined(_GLFW_D3D)
+ #define glClear(x) _d3dfwClear(window)
+ #define glGetString(name) " "
 #endif
 
 typedef struct _GLFWwndconfig   _GLFWwndconfig;
