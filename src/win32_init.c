@@ -256,6 +256,8 @@ const char* _glfwPlatformGetVersionString(void)
         " WGL"
 #elif defined(_GLFW_EGL)
         " EGL"
+#elif defined(_GLFW_D3D)
+        " D3D"
 #endif
 #if defined(__MINGW32__)
         " MinGW"
